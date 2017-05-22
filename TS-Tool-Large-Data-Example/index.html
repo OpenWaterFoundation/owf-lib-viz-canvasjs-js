@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CanvasJS TS Tool Large Data Example</title>
+    <!-- Javascript -->
+    <script type="text/javascript" src="javascript/canvasjs.min.js"></script>
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.js"></script>
+</head>
+
+<body>
+    <div id="chartContainer"></div>
+    <script>
+    var dataPoints = [];
+ 
+    function getDataPointsFromCSV(csv,index) {
+        var dataPoints = csvLines = points = [];
+        csvLines = csv.split(/[\r?\n|\r|\n]+/);
+        for (var i = 0; i < csvLines.length; i++)
+            if (csvLines[i].length > 0) {
+                points = csvLines[i].split(",");
+                dataPoints.push({ 
+                    x: new Date(points[0]), 
+                    y: parseFloat(points[index])    
+          });
+      }
+        return dataPoints;
+    }
+       
+    $.get("data-files/large-precip-data.csv", function(data) {
+        var chart = new CanvasJS.Chart("chartContainer", {
+            title: {
+              text: "Precipitation",
+            },
+            axisX: {
+              title: 'Date',
+              valueFormatString: "MMM-DD-YY",   // format x-axis tick mark strings
+              labelAngle: -50   // label angle of each x-axis tick mark
+            },
+            axisY: {
+              title: 'inches'
+            },
+            legend: {
+             horizontalAlign: "left", // "center" , "right"
+             verticalAlign: "center",  // "top" , "bottom"
+             fontSize: 15
+           },
+            zoomEnabled: true,
+            data: [
+            {
+                type: "line",
+                dataPoints: getDataPointsFromCSV(data,1),
+                legendText: '53005',
+                // showInLegend: true,
+                lineColor: "blue"
+            },
+            {
+                type: "line",
+                dataPoints: getDataPointsFromCSV(data,2),
+                legendText: '58839',
+                // showInLegend: true,
+                lineColor: "red"
+            },
+            {
+                type: "line",
+                dataPoints: getDataPointsFromCSV(data,3),
+                legendText: '052759',
+                // showInLegend: true,
+                lineColor: "green"
+            }
+            ]
+        });
+        
+        chart.render();
+     
+    });
+    </script>
+</body>
+</html>

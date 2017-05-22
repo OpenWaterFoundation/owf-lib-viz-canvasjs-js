@@ -1,0 +1,97 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>CanvasJS Simple Example</title>
+    <!-- Javascript -->
+    <script src="javascript/canvasjs.min.js"></script>
+</head>
+
+<body>
+    <!-- Element that the chart will be bound too. -->
+  <div id="chartContainer"></div>
+  <script>
+    // Generate Chart
+    var chart = new CanvasJS.Chart("chartContainer", {
+        title: {    // Title of Graph/Chart
+            text: "Simple Chart Example",   // Title Text
+            fontSize: 35,   // Size of Title
+            fontFamily: "sans-serif"    // Font Family of Title
+        },
+        axisX: {
+            title: "X-Axis", // X-Axis Label
+            titleFontSize: 30,
+            labelFontFamily: "sans-serif",
+            gridThickness: 2    // shows x grids
+        },
+        axisY: {
+             title: "Y-Axis", // Y-Axis Label
+            titleFontSize: 30,
+            labelFontFamily: "sans-serif"
+        },
+        legend: {
+            fontSize: 30,
+            horizontalAlign: "center",
+            verticalAlign: "bottom",
+            fontSize: 15            
+        },
+        toolTip: {
+            shared: true    // Allows the tooltip to show multiple series information at once when 
+                            // hovering over a data point
+        },
+        data: [
+        {
+            // Series 1
+            type: "line",    // defines what type of chart the data will be dispalyed as
+            name: "Series 1",   // defines the name of the data series
+            showInLegend: true, // if set to true the legend text specified below will show in legend
+            legendText: "Series 1", // text shown in legend
+            dataPoints: [
+                {x: 1, y: 90},
+                {x: 2, y: 40},
+                {x: 3, y: 50},
+                {x: 4, y: 120},
+                {x: 5, y: 80},
+                {x: 6, y: 90},
+                {x: 7, y: 110}
+            ]
+        },
+        {
+            // Series 2
+            type: "line",
+            name: "Series 2",
+            showInLegend: true,
+            legendText: "Series 2",
+            dataPoints: [
+                {x: 1, y: 120},
+                {x: 2, y: 160},
+                {x: 3, y: 200},
+                {x: 4, y: null},
+                {x: 5, y: 130},
+                {x: 6, y: 220},
+                {x: 7, y: 160},
+            ]
+        },
+        {
+            // Series 3
+            type: "line",
+            name: "Series 3",
+            showInLegend: true,
+            legendText: "Series 3",
+            dataPoints: [
+                {x: 1, y: 300},
+                {x: 2, y: 240},
+                {x: 3, y: 290},
+                {x: 4, y: 230},
+                {x: 5, y: 300},
+                {x: 6, y: 320},
+                {x: 7, y: 330},
+            ]
+        }
+        ],
+        zoomEnabled: true,   // Enable zooming
+        zoomtype: "xy", // Control the axis for which zooming and panning are enabled
+    });
+    chart.render();
+  </script>
+</body>
+</html>
