@@ -16,4 +16,4 @@ COOP:052759.ACIS.pcpn.Day~RCC-ACIS
 TimeSeriesToTable(TSList=AllMatchingTSID,TSID="*",TableID="PrecipitationStations",DateTimeColumn="Date",ValueColumn="%L",IfTableNotFound="Create")
 
 # Write Table To Delimited File
-WriteTableToDelimitedFile(TableID="PrecipitationStations",OutputFile="C:\Users\intern3\Canvas-JS\git-repos\owf-lib-viz-canvasjs-js\TS-Tool-Large-Data-Example\data-files\large-precip-data.csv",WriteHeaderComments=False,AlwaysQuoteStrings=False)
+WriteTableToDelimitedFile(TableID="PrecipitationStations",OutputFile="../data-files\large-precip-data.csv",WriteHeaderComments=False,AlwaysQuoteStrings=False)
