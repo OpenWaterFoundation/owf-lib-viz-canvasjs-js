@@ -40,8 +40,8 @@
               title: 'inches'
             },
             legend: {
-             horizontalAlign: "left", // "center" , "right"
-             verticalAlign: "center",  // "top" , "bottom"
+             horizontalAlign: "center", // "center" , "right"
+             verticalAlign: "bottom",  // "top" , "bottom"
              fontSize: 15
            },
             zoomEnabled: true,
@@ -50,28 +50,25 @@
                 type: "line",
                 dataPoints: getDataPointsFromCSV(data,1),
                 legendText: '53005',
-                // showInLegend: true,
-                lineColor: "blue"
+                showInLegend: true
             },
             {
                 type: "line",
                 dataPoints: getDataPointsFromCSV(data,2),
                 legendText: '58839',
-                // showInLegend: true,
-                lineColor: "red"
+                showInLegend: true
             },
             {
                 type: "line",
                 dataPoints: getDataPointsFromCSV(data,3),
                 legendText: '54054',
-                // showInLegend: true,
-                lineColor: "green"
+                showInLegend: true
             },
             {
                 type: "line",
                 dataPoints: getDataPointsFromCSV(data,4),
                 legendText: '51060',
-                lineColor: 'orange'
+                showInLegend: true
             }
             ]
         });

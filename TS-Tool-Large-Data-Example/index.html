@@ -16,13 +16,20 @@
         var dataPoints = csvLines = points = [];
         csvLines = csv.split(/[\r?\n|\r|\n]+/);
         for (var i = 0; i < csvLines.length; i++)
-            if (csvLines[i].length > 0) {
+        {
+            if(csvLines[i].length > 0) 
+            {
                 points = csvLines[i].split(",");
-                dataPoints.push({ 
-                    x: new Date(points[0]), 
-                    y: parseFloat(points[index])    
-          });
-      }
+                if(i != 0 && points[index] != "")
+                {
+                    dataPoints.push({ x: new Date(points[0].substring(0,4),points[0].substring(5,7),points[0].substring(8,10)), y: parseFloat(points[index])});
+                }
+                else
+                {
+                    dataPoints.push({ x: new Date(points[0].substring(0,4),points[0].substring(5,7),points[0].substring(8,10)), y: null});
+                }
+            }
+        }
         return dataPoints;
     }
        
@@ -31,17 +38,20 @@
             title: {
               text: "Precipitation",
             },
+            toolTip: {  // Allow tooltip to show all series data points when hovering over data
+                shared: true
+            },
             axisX: {
               title: 'Date',
-              valueFormatString: "MMM-DD-YY",   // format x-axis tick mark strings
-              labelAngle: -50   // label angle of each x-axis tick mark
+              labelAngle: -50,   // label angle of each x-axis tick mark,
+              gridThickness: 2  // show grid on x-axis
             },
             axisY: {
-              title: 'inches'
+              title: 'inches',
             },
             legend: {
-             horizontalAlign: "left", // "center" , "right"
-             verticalAlign: "center",  // "top" , "bottom"
+             horizontalAlign: "center", // "center" , "right"
+             verticalAlign: "bottom",  // "top" , "bottom"
              fontSize: 15
            },
             zoomEnabled: true,
@@ -50,22 +60,19 @@
                 type: "line",
                 dataPoints: getDataPointsFromCSV(data,1),
                 legendText: '53005',
-                // showInLegend: true,
-                lineColor: "blue"
+                showInLegend: true,
             },
             {
                 type: "line",
                 dataPoints: getDataPointsFromCSV(data,2),
                 legendText: '58839',
-                // showInLegend: true,
-                lineColor: "red"
+                showInLegend: true,
             },
             {
                 type: "line",
                 dataPoints: getDataPointsFromCSV(data,3),
                 legendText: '052759',
-                // showInLegend: true,
-                lineColor: "green"
+                showInLegend: true,
             }
             ]
         });

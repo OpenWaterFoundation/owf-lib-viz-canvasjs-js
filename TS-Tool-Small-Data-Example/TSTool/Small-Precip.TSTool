@@ -1,0 +1,22 @@
+# Command file to read ACIS daily precipitation data and save to a DateValue
+# file, using a list of TSIDs.
+
+SetInputPeriod(InputStart="2016-01-01",InputEnd="2016-01-31")
+
+# FT COLLINS
+COOP:053005.ACIS.pcpn.Day~RCC-ACIS
+
+# WATERDALE
+COOP:058839.ACIS.pcpn.Day~RCC-ACIS
+
+# HOHNHOLZ RCH
+COOP:054054.ACIS.pcpn.Day~RCC-ACIS
+
+# BUCKHORN MTN 1 E
+COOP:051060.ACIS.pcpn.Day~RCC-ACIS
+
+# Create Table containing above TimeSeries
+TimeSeriesToTable(TSList=AllMatchingTSID,TSID="*",TableID="PrecipitationStations",DateTimeColumn="Date",ValueColumn="%L",IfTableNotFound="Create")
+
+# Write Table To Delimited File
+WriteTableToDelimitedFile(TableID="PrecipitationStations",OutputFile="C:\Users\intern3\Canvas-JS\git-repos\owf-lib-viz-canvasjs-js\TS-Tool-Small-Data-Example\data-files\small-precip-data.csv",WriteHeaderComments=False,AlwaysQuoteStrings=False)
