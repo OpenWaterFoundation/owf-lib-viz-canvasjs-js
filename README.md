@@ -8,8 +8,8 @@ A standard development folder structure is recommended. The website development 
 ```
 > C:
 > cd \Users\user
-> mkdir CanvasJS
-> cd CanvasJS
+> mkdir Canvas-JS
+> cd Canvas-JS
 > mkdir git-repos
 > cd git-repos
 > git clone (URL)
@@ -21,6 +21,15 @@ See also:
 * [CanvasJS Documentation](http://canvasjs.com/docs/charts/basics-of-creating-html5-chart/)
 * [CanvasJS How To Eamples](http://canvasjs.com/docs/charts/how-to/creating-dynamic-charts)
 * [CanvasJS Options Reference](http://canvasjs.com/docs/charts/chart-options/)
+
+## Data Format RCC-ACIS Precipitation Time Series
+|Date   |StationID 1   |StationID 2   |StationID 3   |StationID X   |
+|:-:|---|---|---|---|
+|1/01/2000   |0.0   |1.0   |0.0   |precipitation amount   |
+|1/02/2000   |0.5   |1.73   |0.2   |precipitation amount   |
+|1/03/2000   |0.26   |0.84   |0.64   |precipitation amount   |
+
+** **Note** the data below each station is the amount of precipitation that occured that day. 
 
 ## What is a Timeseries Graph
 
