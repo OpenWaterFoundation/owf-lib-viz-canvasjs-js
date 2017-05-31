@@ -4,7 +4,7 @@ This example is meant to serve as a base root of how Canvas works. It shows some
 
 ## File Structure 
 ```
-├── Graph-Review-Example
+├── simple-example
 │   ├── index.html
 │   ├── javascript
 │   │   ├── canvasjs.min.js
