@@ -14,7 +14,12 @@ A standard development folder structure is recommended. The website development 
 > cd git-repos
 > git clone https://github.com/OpenWaterFoundation/owf-lib-viz-canvasjs-js
 ``` 
-The repository contains multiple folders that include time series examples using different sets of data.
+This repository contains three different folders. Each folder contains an example of how to create a Time Series chart using CanvasJS. In order to see each example, download or clone this repository and open up each examples index.html in a web browser of your choosing. For further documentation on each folder refer to the links below:
+
+* [TS-Tool-Large-Data-Example](https://github.com/OpenWaterFoundation/owf-lib-viz-canvasjs-js/tree/master/TS-Tool-Large-Data-Example)
+* [TS-Tool-Small-Data-Example](https://github.com/OpenWaterFoundation/owf-lib-viz-canvasjs-js/tree/master/TS-Tool-Small-Data-Example)
+* [simple-example](https://github.com/OpenWaterFoundation/owf-lib-viz-canvasjs-js/tree/master/simple-example)
+
 ## Additional Documentation
 
 See also:
