@@ -19,7 +19,7 @@ The repository contains multiple folders that include time series examples using
 
 See also:
 * [CanvasJS Documentation](http://canvasjs.com/docs/charts/basics-of-creating-html5-chart/)
-* [CanvasJS How To Eamples](http://canvasjs.com/docs/charts/how-to/creating-dynamic-charts)
+* [CanvasJS How To Examples](http://canvasjs.com/docs/charts/how-to/creating-dynamic-charts)
 * [CanvasJS Options Reference](http://canvasjs.com/docs/charts/chart-options/)
 
 ## Data Format RCC-ACIS Precipitation Time Series
