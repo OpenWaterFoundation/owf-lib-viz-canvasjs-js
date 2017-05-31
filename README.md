@@ -31,6 +31,39 @@ See also:
 
 ** **Note** the data below each station is the amount of precipitation that occured that day. 
 
+## NOTES
+
+* Requires a decent understanding of javascript and JQuery
+* Requires small amount of code to implement 
+* When graphing multiple series, there must be multiple specifications in the data option. For example, when graphing 3 series the code would look as follows:
+```
+data: [
+{
+    type: "line",
+    dataPoints: getDataPointsFromCSV(data,1),
+    legendText: '53005',
+    showInLegend: true,
+},
+{
+    type: "line",
+    dataPoints: getDataPointsFromCSV(data,2),
+    legendText: '58839',
+    showInLegend: true,
+},
+{
+    type: "line",
+    dataPoints: getDataPointsFromCSV(data,3),
+    legendText: '052759',
+    showInLegend: true,
+}
+]
+```
+* Provides examples and documentation
+* Open Source
+* Free
+* Has a good release history
+* Actively developed
+
 ## What is a Timeseries Graph
 
 Timeseries, also known as Line Graphs, are used to display quantitative value over a continuous interval or time span. It is most frequently used to show trends and relationships (when grouped with other lines). Line Graphs also help to give a "big picture" over an interval, to see how it has developed over that period.
