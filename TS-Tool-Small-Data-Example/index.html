@@ -27,51 +27,56 @@
     }
        
     $.get("data-files/small-precip-data.csv", function(data) {
+        // create new canvas chart
         var chart = new CanvasJS.Chart("chartContainer", {
             title: {
-              text: "Precipitation",
+              text: "Precipitation", // title of chart
             },
             axisX: {
-              title: 'Date',
+              title: 'Date',    // x axis title
               valueFormatString: "MMM-DD-YY",   // format x-axis tick mark strings
               labelAngle: -50   // label angle of each x-axis tick mark
             },
             axisY: {
-              title: 'inches'
+              title: 'inches'   // y axis title
             },
             legend: {
              horizontalAlign: "center", // "center" , "right"
              verticalAlign: "bottom",  // "top" , "bottom"
-             fontSize: 15
+             fontSize: 15 // font size of legend 
            },
            toolTip: {
-            shared: true
+            shared: true    // tooltip will display all series points when hovering over single piece of data
            },
-            zoomEnabled: true,
+            zoomEnabled: true,  // allows users to zoom in on chart
             data: [
             {
-                type: "line",
-                dataPoints: getDataPointsFromCSV(data,1),
-                legendText: '53005',
-                showInLegend: true
+                // first series
+                type: "line",   // format to plot data
+                dataPoints: getDataPointsFromCSV(data,1), // call to function to get data points
+                legendText: '53005',    // name of series shown in legend
+                showInLegend: true  // show series in legend
             },
             {
-                type: "line",
-                dataPoints: getDataPointsFromCSV(data,2),
-                legendText: '58839',
-                showInLegend: true
+                // second series
+                type: "line",   // format to plot data
+                dataPoints: getDataPointsFromCSV(data,2), // call to function to get data points
+                legendText: '58839',    // name of series shown in legend
+                showInLegend: true  // show series in legend
             },
             {
-                type: "line",
-                dataPoints: getDataPointsFromCSV(data,3),
-                legendText: '54054',
-                showInLegend: true
+                // third series
+                type: "line",   // format to plot data
+                dataPoints: getDataPointsFromCSV(data,3), // call to function to get data points                
+                legendText: '54054',    // name of series shown in legend
+                showInLegend: true  // show series in legend
             },
             {
-                type: "line",
-                dataPoints: getDataPointsFromCSV(data,4),
-                legendText: '51060',
-                showInLegend: true
+                // fourth series 
+                type: "line",   // format to plot data
+                dataPoints: getDataPointsFromCSV(data,4), // call to function to get data points
+                legendText: '51060',    // name of series shown in legend
+                showInLegend: true  // show series in legend
             }
             ]
         });
